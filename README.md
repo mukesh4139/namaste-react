@@ -36,3 +36,10 @@
     - useState() - Super powerful State Variables in React
 
     - useEffect()
+
+
+# React Algorithm - Reconciliation Algorithm (React Fiber: came in React 16) More on: React Fiber Architecture acdlite/react-fiber-architecture
+
+- Virtual DOM - representation of an actual DOM
+- Diff algorithm - find difference between two virtual DOM
+
