@@ -42,4 +42,3 @@
 
 - Virtual DOM - representation of an actual DOM
 - Diff algorithm - find difference between two virtual DOM
-
