@@ -8,6 +8,9 @@ const Body = () => {
    * whenever a state variable changes, react re-renders the component.
    */
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
 
   /**
    * Above syntax is array destructuring. It is similar to writing:
@@ -24,6 +27,10 @@ const Body = () => {
    * array function : callback function, it's called after component renders
    * and dependency array.
    */
+
+  /**
+   * Whenever state varaible update, react triggers a reconciliation cycle (re-renders the component)
+   */
   useEffect(() => {
     console.log("useEffect Called");
     fetchData();
@@ -36,10 +43,14 @@ const Body = () => {
     const json = await data.json();
 
     console.log(json);
+    /**
+     * Optional chaining
+     */
     setListOfRestaurants(
-      /**
-       * Optional chaining
-       */
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
+    );
+    setFilteredRestaurants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
@@ -54,6 +65,27 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // filter
+              const filteredRestaurants = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteredRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -67,9 +99,8 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="search">Search</div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
