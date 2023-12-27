@@ -72,3 +72,12 @@
 .filter {
     display: flex;
 }
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.user-avatar {
+    width: 120px
+}
