@@ -28,4 +28,24 @@ const RestaurantCard = (props) => {
   );
 };
 
+/**
+ * Higher Order Component
+ * input - RestaurantCard => RestaurantCardPromoted
+ */
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    const DiscountInfo = props.resData.info.aggregatedDiscountInfoV3;
+    const Label = DiscountInfo["header"] + " " + DiscountInfo["subHeader"];
+    return (
+      <div className="relative">
+        <div className="absolute top-32 text-xl font-bold left-8 text-white">
+          <label>{Label}</label>
+        </div>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;

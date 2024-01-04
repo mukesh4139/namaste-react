@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   /**
    * Above syntax is array destructuring. It is similar to writing:
@@ -40,11 +42,11 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5940034&lng=77.3690496&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5932944&lng=77.3656472&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
 
-    console.log(json);
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle);
     /**
      * Optional chaining
      */
@@ -111,7 +113,11 @@ const Body = () => {
       <div className="res-container flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <Link to={"/restaurants/" + restaurant.info.id}>
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            {restaurant.info.aggregatedDiscountInfoV3 ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
