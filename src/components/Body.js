@@ -123,7 +123,10 @@ const Body = () => {
       </div>
       <div className="res-container flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
-          <Link to={"/restaurants/" + restaurant.info.id}>
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
             {restaurant.info.aggregatedDiscountInfoV3 ? (
               <RestaurantCardPromoted resData={restaurant} />
             ) : (

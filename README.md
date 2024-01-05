@@ -42,3 +42,11 @@
 
 - Virtual DOM - representation of an actual DOM
 - Diff algorithm - find difference between two virtual DOM
+
+# Redux Toolkit
+	- Install @reduxjs/toolkit and react-redux
+	- Build our store
+	- Connect our store to app
+	- Cart Slice (cartSlice)
+	- Dispatch(Action)
+	- Selector
