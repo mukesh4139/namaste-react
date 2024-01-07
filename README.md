@@ -50,3 +50,18 @@
 	- Cart Slice (cartSlice)
 	- Dispatch(Action)
 	- Selector
+
+# Types of Testing (developer)
+	- Unit Testing
+  - Integration Testing
+  - End to End testing
+
+# Setting up Testing in the app using react testing library and jest
+  - Install React Testing Library
+  - Install Jest
+  - Install Babel dependencies
+  - Configure Babel
+  - Configure Parcel to disable default Babel transpilation
+  - Jest configuration - npx jest --init
+  - install jsdom library
+
