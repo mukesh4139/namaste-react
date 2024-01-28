@@ -1,0 +1,90 @@
+{
+  "info": {
+    "id": "104568",
+    "name": "Starbucks Coffee",
+    "cloudinaryImageId": "182191ab163770437b62861a6f987709",
+    "locality": "DLF Mall of India",
+    "areaName": "Sector 18",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+      "Beverages",
+      "Cafe",
+      "Snacks",
+      "Desserts",
+      "Bakery",
+      "Ice Cream"
+    ],
+    "avgRating": 4.2,
+    "parentId": "195515",
+    "avgRatingString": "4.2",
+    "totalRatingsString": "1K+",
+    "sla": {
+      "deliveryTime": 25,
+      "lastMileTravel": 1.1,
+      "serviceability": "SERVICEABLE",
+      "slaString": "20-25 mins",
+      "lastMileTravelString": "1.1 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2024-01-28 22:30:00",
+      "opened": true
+    },
+    "badges": {
+      "textExtendedBadges": [
+        {
+          "iconId": "guiltfree/GF_Logo_android_3x",
+          "shortDescription": "options available",
+          "fontColor": "#7E808C"
+        }
+      ]
+    },
+    "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {
+          "badgeObject": [
+            {
+              "attributes": {
+                "description": "",
+                "fontColor": "#7E808C",
+                "iconId": "guiltfree/GF_Logo_android_3x",
+                "shortDescription": "options available"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "orderabilityCommunication": {
+      "title": {},
+      "subTitle": {},
+      "message": {},
+      "customIcon": {}
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+  },
+  "analytics": {
+    "context": "seo-data-e81fbca3-00e5-4f0a-b7db-47800c678aaa"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/restaurants/starbucks-coffee-dlf-mall-of-india-sector-18-noida-1-104568",
+    "text": "RESTAURANT_MENU",
+    "type": "WEBLINK"
+  },
+  "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
